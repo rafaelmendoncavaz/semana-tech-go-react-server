@@ -60,7 +60,7 @@ func NewHandler(q *pgstore.Queries) http.Handler {
 			r.Route("/{room_id}", func(r chi.Router) {
 				r.Get("/", a.handleGetRoom)
 
-				r.Route("/{room_id}/messages", func(r chi.Router) {
+				r.Route("/messages", func(r chi.Router) {
 					r.Post("/", a.handleCreateRoomMessage)
 					r.Get("/", a.handleGetRoomMessages)
 
